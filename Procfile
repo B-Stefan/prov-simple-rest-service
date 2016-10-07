@@ -1,1 +1,1 @@
-web: heroku.py
+web: python example/simple_rest_service.py
