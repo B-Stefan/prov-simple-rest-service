@@ -5,7 +5,7 @@ from provdbconnector.db_adapters import SimpleInMemoryAdapter
 import os
 prov_api = ProvApi(adapter=SimpleInMemoryAdapter, auth_info=None)
 
-port = os.environ.get("PORT", 9090)
+port = int(os.environ.get("PORT", 9090))
 
 print(port)
 
