@@ -1,9 +1,10 @@
+from logging import Logger
 
 from connexion import NoContent, problem
-import  datetime
-from example.simple_rest_service import prov_api
-from  provdbconnector.provapi import ProvApiException, InvalidArgumentTypeException
-from logging import Logger
+from  provdbconnector.provapi import ProvApiException
+
+from simple_rest_service import prov_api
+
 pets = {}
 
 logger = Logger(__name__)
