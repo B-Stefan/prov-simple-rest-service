@@ -1,0 +1,2 @@
+connexion==1.0.128
+git+https://github.com/DLR-SC/prov-db-connector

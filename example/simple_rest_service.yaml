@@ -1,0 +1,101 @@
+swagger: "2.0"
+
+info:
+  title: "{{title}}"
+  version: "1.0"
+
+basePath: /v1.0
+
+paths:
+  /document:
+      post:
+        tags:
+          - Prov
+        summary: Generate a prov document
+        description: "Saves the following formats: PROV-JSON, PROV-XML"
+        produces:
+          - text/richtext
+        consumes:
+          - text/richtext
+        responses:
+          200:
+            description: The id of the document
+            schema:
+              type: string
+            examples:
+              "text/richtext": "647a186f-99a2-4bc4-8684-28717bb3ed96"
+        parameters:
+          - name: document
+            in: body
+
+            description: >
+              Represents a Prov-Document as string
+
+              ## Supported Formats
+
+                 |Input-Format | Status | Comment|
+                |-------|------|
+                |`PROV-JSON` | ✅ |  [W3C-Document](https://www.w3.org/Submission/2013/SUBM-prov-json-20130424/)|
+                |`PROV-XML` | ✅ |  [W3C-Document](hhttps://www.w3.org/TR/prov-xml/)
+                |`PROV-N`| ❌ |  The [PROV](https://github.com/trungdong/prov)-Library  dosent support this feature at the moment. [W3C-Document](https://www.w3.org/TR/prov-n/)|
+
+
+
+
+
+              ## Example input
+
+              The following example is a simple prov document based on
+              [this](https://provenance.ecs.soton.ac.uk/store/documents/114794/) provstore entry
+
+                ```json
+                 {
+                   "wasAssociatedWith":{
+                      "_:id1":{
+                         "prov:agent":"ex:Bob",
+                         "prov:activity":"ex:Alice"
+                      }
+                   },
+                   "prefix":{
+                      "ex":"http://example.com"
+                   },
+                   "agent":{
+                      "ex:Bob":{
+
+                      }
+                   },
+                   "activity":{
+                      "ex:Alice":{
+
+                      }
+                   }
+                }
+                ```
+
+
+            required: true
+            schema:
+              type: string
+
+  /document/{id}:
+     get:
+      tags:
+        - Prov
+      summary: Return a Prov-Document
+      description: Try to find the document by id
+      produces:
+        - text/richtext
+      consumes:
+        - text/richtext
+      parameters:
+        - name: id
+          in: path
+          type: string
+          required: true
+          description: "The id of the prov document "
+      responses:
+        200:
+          description: OK
+          schema:
+            type: string
+
