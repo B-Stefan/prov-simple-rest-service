@@ -1,1 +1,1 @@
-web: gunicorn -w 4 -b 0.0.0.0:$PORT  example/simple_rest_service:app
+web: gunicorn -w 4 -b 0.0.0.0:$PORT -k gevent example/simple_rest_service:app
