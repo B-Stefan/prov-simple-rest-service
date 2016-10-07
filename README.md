@@ -5,7 +5,7 @@ A simple rest service example for prov-documents
 ##Live version: 
 This project is only an example, demonstration propose! 
 
-[Live-Version](prov-simple-rest-example.herokuapp.com)
+[Live-Version](https://prov-simple-rest-example.herokuapp.com)
 
 **The Heroku instance is not for production purpose** 
 
