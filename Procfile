@@ -1,1 +1,1 @@
-web: gunicorn example/simple_rest_service.py
+web: python example/simple_rest_service.py
