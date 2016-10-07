@@ -7,6 +7,8 @@ prov_api = ProvApi(adapter=SimpleInMemoryAdapter, auth_info=None)
 
 port = os.environ.get("PORT", 9090)
 
+print(port)
+
 if __name__ == '__main__':
 
     app = connexion.App(__name__, port, specification_dir='./')
