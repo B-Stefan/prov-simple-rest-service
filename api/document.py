@@ -2,8 +2,10 @@ from logging import Logger
 
 from connexion import NoContent, problem
 from  provdbconnector.provapi import ProvApiException
+from provdbconnector import ProvApi
+from provdbconnector.db_adapters import SimpleInMemoryAdapter
+prov_api = ProvApi(adapter=SimpleInMemoryAdapter, auth_info=None)
 
-from simple_rest_service import prov_api
 
 pets = {}
 
