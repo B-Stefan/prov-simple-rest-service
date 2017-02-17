@@ -1,4 +1,4 @@
 connexion==1.1.5
 git+https://github.com/DLR-SC/prov-db-connector
-gunicorn
+gunicorn==19.6.0
 gevent
